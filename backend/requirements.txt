@@ -7,3 +7,6 @@ uvicorn
 numpy
 pandas
 matplotlib
+faiss-cpu
+sentence-transformers
+pypdf

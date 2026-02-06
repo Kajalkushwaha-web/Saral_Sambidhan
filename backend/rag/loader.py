@@ -9,7 +9,7 @@
 
 from pypdf import PdfReader
 
-def load_constitution_pdf(pdf_path:str)->str:
+def load_document(pdf_path:str)->str:
     reader=PdfReader(pdf_path) # Reads the file from path
     full_text=""   # assigning all the extracted text from pdf as String
 

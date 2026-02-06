@@ -1,4 +1,4 @@
-from langchain.schema import Document
+from langchain_core.documents import Document
 
 #faiss in lanchain works with Document objects (text+metadata)
 def create_documents(chunks:list[str]):

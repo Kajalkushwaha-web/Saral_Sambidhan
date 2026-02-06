@@ -12,7 +12,7 @@ def split_and_chunking(text:str):
 
 # debug purpose only
 if __name__ == "__main__":
-    from loader import load_constitution_pdf
+    from loader import load_document
 
     text = load_constitution_pdf("resources/Constitution.pdf")
     chunks = split_and_chunking(text)

@@ -1,30 +1,47 @@
 function toggleChat() {
     const box = document.getElementById("chatBox");
-    // This allows it to open on the very first click
-    if (box.style.display === "none" || box.style.display === "") {
-        box.style.display = "flex";
+    box.classList.toggle("active");
+
+    if (box.classList.contains("active")) {
         document.getElementById("userText").focus();
-    } else {
-        box.style.display = "none";
     }
 }
 
-function sendMessage() {
+async function sendMessage() {
     const textInput = document.getElementById("userText");
-    const text = textInput.value.trim();
     const responseBox = document.getElementById("chatResponse");
+    const query = textInput.value.trim();
 
-    if (!text) return;
+    if (!query) return;
 
     responseBox.classList.remove("hidden");
-    responseBox.innerHTML = '<em>AI is thinking...</em>';
+    responseBox.innerHTML = `<div style="color:#666;font-size:0.9rem;">AI is thinking...</div>`;
 
-    setTimeout(() => {
+    try {
+        const response = await fetch("http://127.0.0.1:8000/api/explain", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ question: query })
+        });
+
+        const data = await response.json();
+
         responseBox.innerHTML = `
-            <strong>AI Simplification:</strong><br><br>
-            This article from the Constitution of Nepal ensures that all citizens are protected equally. 
-            It is a fundamental pillar of our democracy designed to safeguard your freedom.
+            <div style="font-weight:700;color:var(--primary-red);font-size:0.8rem;">AI EXPLANATION</div>
+            <div>${data.explaination.replace(/\n/g, "<br>")}</div>
         `;
-        textInput.value = ""; 
-    }, 1200);
+
+        textInput.value = "";
+
+    } catch (error) {
+        responseBox.innerHTML = `<b style="color:red;">Backend not running on port 8000</b>`;
+    }
 }
+
+document.addEventListener('keydown', (e) => {
+    const textInput = document.getElementById("userText");
+    if (e.key === "Enter" && !e.shiftKey && document.activeElement === textInput) {
+        e.preventDefault();
+        sendMessage();
+    }
+});

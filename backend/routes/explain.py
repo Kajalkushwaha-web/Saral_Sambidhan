@@ -13,4 +13,4 @@ def explain_text(request:ExplainRequest):
     answer=qa_chain.run(request.text)
     return {
         "question":request.text,
-        "explaination":answer}
+        "explanation":answer}

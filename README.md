@@ -8,9 +8,13 @@ backend api route = http://127.0.0.1:8000/api/explain
 - docker run -p 8000:8000 saral_sambidhan-backend:latest
 ---
 
+
+
+
+
 ---
 # if already build the image then just run
--docker run -p 8000:8000 saral_sambidhan-backend:latest
+- docker run -p 8000:8000 saral_sambidhan-backend:latest
 ---
  
 

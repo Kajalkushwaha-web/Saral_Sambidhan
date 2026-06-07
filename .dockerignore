@@ -1,0 +1,53 @@
+__pycache__/
+*.pyc
+.env
+venv/
+.git
+.gitignore
+docker
+
+.env
+.venv/*
+__pycache__/
+*.pyc
+
+# Block all virtual environments
+.venv/
+venv/
+backend/.venv/
+backend/venv/
+
+# Block ALL __pycache__ directories recursively across all folders
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# Block local cache and environment files
+.cache/
+.env
+.git/
+
+# Block local virtual environments across all folders explicitly
+backend/.venv/
+backend/venv/
+.venv/
+venv/
+
+# Block cache and model download folders
+**/.cache/
+**/root/.cache/
+**/faiss_index/
+
+# Block ALL __pycache__ folders recursively across all subfolders
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# Block secrets and git history
+.git/
+.gitignore
+**/.env
+**/.env.example
+

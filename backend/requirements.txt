@@ -1,33 +1,13 @@
-# langchain
-# langchain-core
-# langchain_community
-# langchain_huggingface
-# langchain_text_splitters
-# langchain-google-genai
-# fastapi
-# python-dotenv
-# uvicorn
-# numpy
-# pandas
-# faiss-cpu
-# sentence-transformers
-# pypdf
-# routes
 
-
-# Force CPU-only PyTorch to save ~4GB
---extra-index-url https://download.pytorch.org/whl/cpu
-torch
-torchvision
-torchaudio
 
 # Core Logic
-langchain
 langchain-core
 langchain-community
-langchain-huggingface
 langchain-text-splitters
 langchain-google-genai
+
+# Pure CPU Engine (Zero Torch dependency)
+fastembed
 
 # API & Web
 fastapi
@@ -36,11 +16,5 @@ python-dotenv
 
 # Data & Vector DB
 numpy
-pandas
-faiss-cpu
-sentence-transformers
+faiss-cpu==1.8.0.post1
 pypdf
-
-# Utils
-# 'routes' is likely unnecessary for FastAPI (it has built-in routing)
-# but kept if you have a specific custom package named this.

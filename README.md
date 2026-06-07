@@ -1,5 +1,18 @@
 backend api route = http://127.0.0.1:8000/api/explain
 
+---
+# Startup procedure
+- chmod +x start.sh
+- ./start.sh
+- docker compose build --no-cache
+- docker run -p 8000:8000 saral_sambidhan-backend:latest
+---
+
+---
+# if already build the image then just run
+-docker run -p 8000:8000 saral_sambidhan-backend:latest
+---
+ 
 
 
 Response body

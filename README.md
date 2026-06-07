@@ -1,6 +1,10 @@
 backend api route = http://127.0.0.1:8000/api/explain
 
 ---
+- open the terminal inside SARAL_SAMBIDHAN folder, and run the following command.
+---
+
+---
 # Startup procedure
 - chmod +x start.sh
 - ./start.sh
@@ -17,7 +21,11 @@ backend api route = http://127.0.0.1:8000/api/explain
 - docker run -p 8000:8000 saral_sambidhan-backend:latest
 ---
  
-
+---
+# for quiting
+- docker stop saral_sambidhan-frontend:latest
+- docker stop saral_sambidhan-backend:latest
+---
 
 Response body
 
